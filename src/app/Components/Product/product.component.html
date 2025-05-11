@@ -1,0 +1,41 @@
+<div class="page-title">
+    Demonstration of Built-in directives and data binding
+</div>
+<div class="table-wrapper">
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of productList; track $index) {
+            <tr>
+                <td> {{ item.productName }} </td>
+                <td> {{ item.categoryName }} </td>
+                <td> {{ item.quantity }} </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="form-container">
+    <label>
+        Name: <input type="text" [(ngModel)]="newProduct.productName">
+    </label>
+
+    <div>
+        Category:
+        <label><input type="radio" [(ngModel)]="newProduct.categoryName" value="Computers"/>Computers</label>
+        <label><input type="radio" [(ngModel)]="newProduct.categoryName" value="Mobiles"/>Mobiles</label>
+        <label><input type="radio" [(ngModel)]="newProduct.categoryName" value="Appliances"/>Appliances</label>
+    </div>
+
+    <label>
+        Quantity: <input type="number" [(ngModel)]="newProduct.quantity">
+    </label>
+
+    <button (click)="AddProduct()">Add Product</button>
+</div>
