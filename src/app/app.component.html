@@ -1,3 +1,12 @@
-<app-product></app-product>
+<div class="title-line">
+    <h3 class="page-title">
+        Demonstration of Built-in directives and data binding
+    </h3>
+    @if (hasProductAvailable) {
+        <h2 class="sub-title" >Recently Added Product: {{ productData.productName }}, {{ productData.categoryName }}, {{ productData.quantity }} </h2>
+    }
+</div>
+
+<app-product [applicateName]="applicateName" (NewProductData)="GetProductData($event)"></app-product>
 
 <router-outlet />

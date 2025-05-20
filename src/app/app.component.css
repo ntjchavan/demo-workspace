@@ -1,0 +1,22 @@
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ee442a;
+  margin: 20px 0;
+  padding-bottom: 8px;
+  padding: 12px 16px;
+}
+.title-line {
+  border-bottom: 2px solid #d1d9e1;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #bb7469;
+  margin: 5px 0;
+  padding-bottom: 8px;
+  padding: 12px 16px;
+}

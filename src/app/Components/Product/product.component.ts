@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Product } from "../../Models/product";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
@@ -11,6 +11,9 @@ import { FormsModule } from "@angular/forms";
 })
 
 export class ProductComponent implements OnInit {
+
+    @Input('applicateName') applicateName: string = '';
+    @Output('NewProductData') newProductData = new EventEmitter<Product>();
 
     productList: Product[] = [
         { productName: 'HP Pavilion x360', categoryName: 'Computers', quantity: 4 },
@@ -30,6 +33,8 @@ export class ProductComponent implements OnInit {
     AddProduct() {
         if(this.newProduct.productName && this.newProduct.categoryName && this.newProduct.quantity > 0) {
             this.productList.push({ ...this.newProduct });
+
+            this.newProductData.emit(this.newProduct);
         }
     }
 
